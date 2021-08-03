@@ -55,6 +55,14 @@ class Grade_Subject {
     public static float getGPA() {
         return GPA;
     }
+    public static void printData(Grade_Subject[] subject){
+        System.out.println("\t\tGrade\t\tGrade Point\t\tCredit\t\tTotal Point");
+        for(int j=0; j< subject.length;j++){
+            System.out.printf("Subject#%d\t%C\t\t\t%d\t\t  %d\t\t   %d\n",j+1,subject[j].grade,subject[j].gradepoint,subject[j].credit,subject[j].gradepoint * subject[j].credit);
+        }
+        System.out.println("Total   \t\t\t\t\t\t  "+ totalcredit+"\t\t   "+ totalpoint);
+        System.out.printf("GPA = %.2f",Grade_Subject.getGPA());
+    }
 
 }
 
@@ -71,6 +79,7 @@ public class Lab05_1_630510606 {
             subject[i].calGrade();
         }
         Grade_Subject.calGPA();
-        System.out.printf("GPA = %.2f",Grade_Subject.getGPA());
+        //System.out.printf("GPA = %.2f",Grade_Subject.getGPA());
+        Grade_Subject.printData(subject);
     }
 }

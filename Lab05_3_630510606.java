@@ -24,7 +24,7 @@ class Menu {
 
 class Stack {
     private static int item[] = new int[5];// ;
-    private static int top=-1;
+    private static int top = -1;
 
     public Stack() {
         top = -1;
@@ -76,6 +76,7 @@ class Stack {
             return false;
         }
     }
+
     public static int gettop() {
         return top;
     }
@@ -95,7 +96,6 @@ public class Lab05_3_630510606 {
                         System.out.print("Enter data: ");
                         Stack.push(keyboard.nextInt());
                         break;
-
                     }
                 case 2:
                     Stack.pop();
@@ -104,8 +104,8 @@ public class Lab05_3_630510606 {
                     Stack.show();
                     break;
                 default:
-                System.out.println("Bye bye");
-                break;
+                    System.out.println("Bye bye");
+                    break;
 
             }
         } while (Menu.getChoice() != 4);
