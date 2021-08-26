@@ -5,27 +5,14 @@ Anawin Athawong
 
 import java.util.Scanner;
 
-class Vote {
-    // private static String Mname[3] = { Nadech, Wier, Mario };
-    // private static String Fname[3] = { Aum, Yaya, Bella };
-
-    public static String printNameM(Star a) {
-        return a.M[i];
-    }
-
-    public static String printNameF(Star a) {
-        return a.F[i];
-    }
-}
-
 class Person {
     private String name;
     private int MStar;
     private int FStar;
-    private static int M[] = { 0, 0, 0 };
-    private static int F[] = { 0, 0, 0 };
-    private static int mostM = 0;
-    private static int mostF = 0;
+    private static int M[] = { 0, 0, 0 }; //เก็บผลโหวตของทุกคนแล้วเอามารวมไว้ใน Array นี้
+    private static int F[] = { 0, 0, 0 }; //เก็บผลโหวตของทุกคนแล้วเอามารวมไว้ใน Array นี้
+    private static int mostM = 0; //เก็บตำแหน่งคนที่ได้รับโหวตมากที่สุด
+    private static int mostF = 0; //เก็บตำแหน่งคนที่ได้รับโหวตมากที่สุด
     private static String Mname[] = { "Nadech", "Wier", "Mario" };
     private static String Fname[] = { "Aum", "Yaya", "Bella" };
 
@@ -34,18 +21,18 @@ class Person {
         System.out.printf("Input name : ");
         name = s.nextLine();
         System.out.printf("Input number of actor and number of actress : ");
-        MStar = s.nextInt();
-        FStar = s.nextInt();
+        MStar = s.nextInt(); //เก็บผลโหวต
+        FStar = s.nextInt(); //เก็บผลโหวต
 
     }
 
-    public static void checkAndPrintVote(Person a[]) {
-        for(int i = 0; i < a.length; i++) {
+    public static void checkAndPrintVote(Person a[]) { //เชคค่าที่โหวตของแต่ละคนเอามาเก็บไว้ใน Array ตำแหน่งนั้น
+        for (int i = 0; i < a.length; i++) {
             M[a[i].MStar - 1] += 1;
             F[a[i].FStar - 1] += 1;
         }
-        
-        for (int j = 0; j < 3; j++) {
+
+        for (int j = 0; j < 3; j++) { //หาตำแหน่งคนที่ได้รับผมโหวตมากที่สุดใน Array
             if (mostM < M[j]) {
                 mostM = j;
             }
@@ -64,10 +51,10 @@ class Person {
     public static void printGoodLuckPeople(Person a[]) {
         System.out.print("Good luck voter -> ");
         for (int i = 0; i < a.length; i++) {
-            if (mostM == a[i].MStar-1 && mostF == a[i].FStar-1) {
-                System.out.print(a[i].name+" ");
+            if (mostM == a[i].MStar - 1 && mostF == a[i].FStar - 1) {
+                System.out.print(a[i].name + " ");
             }
-            //System.out.printf("\n%d %d %d %d", mostM, a[i].MStar, mostF, a[i].FStar);
+            // System.out.printf("\n%d %d %d %d", mostM, a[i].MStar, mostF, a[i].FStar);
         }
 
     }

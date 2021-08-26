@@ -29,6 +29,7 @@ class Drawing{
 
 public class Lab06_1_630510606{
     public static void main(String[] args) {
+        
         Drawing myDrawing = new Drawing();
         Scanner input = new Scanner(System.in);
         System.out.print("Input N: ");
